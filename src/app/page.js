@@ -1,7 +1,9 @@
+import React from "react";
+
 export default function Home() {
     return (
-        <main className="min-h-[250vh]">
-            <section className="min-h-screen bg-primary"></section>
-        </main>
+        <section className="min-h-[150vh]">
+            <div className="min-h-screen bg-primary"></div>
+        </section>
     );
 }

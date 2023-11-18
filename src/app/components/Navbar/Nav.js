@@ -2,36 +2,29 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { navBarAnimation } from "./animations";
+import { useContext, useEffect } from "react";
+import { navBarScrollAnimation } from "./animations";
+import { IoMenu } from "react-icons/io5";
+import { NavContext } from "./context/NavContext";
+import { IoClose } from "react-icons/io5";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Nav = () => {
-    const navRef = useRef();
-    const navLinks = [
-        {
-            name: "About",
-            href: "/about",
-        },
-        {
-            name: "Courses",
-            href: "/courses",
-        },
-        {
-            name: "Hire Our Alumni",
-            href: "/hireAlumni",
-        },
-    ];
+    const { isMobileMenuOpen, toggleMenu, navLinks, navRef, bodyOverlayRef } =
+        useContext(NavContext);
 
     useEffect(() => {
-        navBarAnimation(navRef.current);
+        let ani = navBarScrollAnimation(navRef.current);
+
+        return () => {
+            ani?.revert();
+        };
     }, []);
 
     return (
-        <nav className="fixed w-full text-light">
-            <div
-                className="flex  justify-between items-center container py-5"
-                ref={navRef}>
+        <nav className="fixed w-full text-light py-5" ref={navRef}>
+            <div className="flex  justify-between items-center container">
                 <h3>Logo</h3>
 
                 <ul className="gap-12  hidden md:flex lg:gap-20">
@@ -48,9 +41,17 @@ const Nav = () => {
 
                 <Link
                     href="/courses"
-                    className="inline-block px-5 py-1.5 border-white border hover:bg-primary-dark transition">
+                    className="px-5 py-1.5 border-white border hover:bg-primary-dark transition hidden md:inline-block">
                     Get Started
                 </Link>
+
+                <button
+                    className="inline-block md:hidden text-3xl"
+                    onClick={toggleMenu}
+                    aria-controls="mobile-menu"
+                    aria-expanded={isMobileMenuOpen}>
+                    <IoMenu />
+                </button>
             </div>
         </nav>
     );

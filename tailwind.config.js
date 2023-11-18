@@ -9,23 +9,19 @@ module.exports = {
         container: {
             padding: {
                 DEFAULT: "1rem",
-                sm: "2rem",
-                md: "3rem",
+                sm: ".5rem",
+                md: "2rem",
             },
             center: true,
         },
         extend: {
-            backgroundImage: {
-                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-                "gradient-conic":
-                    "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-            },
             colors: {
                 light: "#F9F9F9",
+                "transparent-black": "rgba(0,0,0, 0.5)",
             },
             backgroundColor: {
                 primary: "#0b2d39",
-                "primary-dark": "#082029",
+                "primary-dark": "#04141a",
             },
         },
     },
