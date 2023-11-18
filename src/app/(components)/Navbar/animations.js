@@ -4,7 +4,8 @@ const { default: gsap } = require("gsap");
 export const navBarScrollAnimation = (nav) => {
     return gsap.timeline().to(nav, {
         paddingBlock: theme.padding[3],
-        backgroundColor: "rgba(0,0,0, .5)",
+        color: "white",
+        backgroundColor: "rgba(11, 45, 57, .9)",
         ease: "power3.inOut",
         scrollTrigger: {
             scrub: 1,

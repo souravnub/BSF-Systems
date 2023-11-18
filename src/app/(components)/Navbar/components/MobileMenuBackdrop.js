@@ -11,7 +11,7 @@ const MobileMenuBackdrop = () => {
         <div
             onClick={toggleMenu}
             ref={bodyOverlayRef}
-            className="hidden fixed inset-0 bg-transparent-black"></div>
+            className="hidden fixed z-[49] inset-0 bg-transparent-black"></div>
     );
 };
 

@@ -1,10 +1,14 @@
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Nav from "@/app/(components)/Navbar/Nav";
 import "./globals.css";
 import MobileMenu from "./(components)/Navbar/components/MobileMenu";
 import NavState from "./(components)/Navbar/context/NavContext";
 import MobileMenuBackdrop from "./(components)/Navbar/components/MobileMenuBackdrop";
-const inter = Inter({ subsets: ["latin"] });
+
+const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata = {
     title: "Create Next App",
@@ -14,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body className={poppins.className}>
                 <NavState>
                     <Nav />
                     <MobileMenu />

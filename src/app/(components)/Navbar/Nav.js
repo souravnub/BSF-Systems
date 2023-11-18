@@ -22,7 +22,9 @@ const Nav = () => {
     }, []);
 
     return (
-        <nav className="fixed w-full text-light py-5" ref={navRef}>
+        <nav
+            className="fixed w-full z-50 text-black backdrop-blur-md py-5"
+            ref={navRef}>
             <div className="flex  justify-between items-center container">
                 <h3>Logo</h3>
 
@@ -31,7 +33,7 @@ const Nav = () => {
                         <li key={href}>
                             <Link
                                 href={href}
-                                className="after:content-[''] after:bg-light after:block after:h-px after:rounded-full after:w-1/2 after:mx-auto after:scale-x-0 after:hover:scale-x-100 after:transition-transform after:origin-left">
+                                className="after:content-[''] after:bg-white after:block after:h-px after:rounded-full after:w-1/2 after:mx-auto after:scale-x-0 after:hover:scale-x-100 after:transition-transform after:origin-left">
                                 {name}
                             </Link>
                         </li>
@@ -40,8 +42,8 @@ const Nav = () => {
 
                 <Link
                     href="/courses"
-                    className="px-5 py-1.5 border-white border hover:bg-primary-dark transition hidden md:inline-block">
-                    Get Started
+                    className="px-5 py-1.5 rounded-full bg-primary-light  text-white transition hidden md:inline-block">
+                    Request a demo
                 </Link>
 
                 <button
