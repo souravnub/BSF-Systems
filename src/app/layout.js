@@ -1,9 +1,9 @@
 import { Inter } from "next/font/google";
-import Nav from "@/app/components/Navbar/Nav";
+import Nav from "@/app/(components)/Navbar/Nav";
 import "./globals.css";
-import MobileMenu from "./components/Navbar/components/MobileMenu";
-import NavState from "./components/Navbar/context/NavContext";
-import MobileMenuBackdrop from "./components/Navbar/components/MobileMenuBackdrop";
+import MobileMenu from "./(components)/Navbar/components/MobileMenu";
+import NavState from "./(components)/Navbar/context/NavContext";
+import MobileMenuBackdrop from "./(components)/Navbar/components/MobileMenuBackdrop";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
