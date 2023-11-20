@@ -22,7 +22,7 @@ const Shape = ({
 const DarkBgWithShapes = ({ children, shapes = [], className }) => {
     return (
         <div
-            className={`relative overflow-hidden min-h-[100vh] bg-[#000000de] ${className}`}>
+            className={`relative overflow-hidden min-h-[100vh] bg-[#000000e6] ${className}`}>
             {shapes.map((shape) => (
                 <Shape {...shape} />
             ))}

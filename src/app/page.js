@@ -50,6 +50,25 @@ const cards = {
     ],
 };
 
+const partners = [
+    {
+        name: "td bank",
+        imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7rPhdjPScD4oh4J18pbiG6hgQ13BegWf_9w&usqp=CAU",
+    },
+    {
+        name: "canadian tyre",
+        imgUrl: "https://s201.q4cdn.com/326551073/files/design/CT-Brandmark-Standard-Primary-RGW-POS-RGB.png",
+    },
+    {
+        name: "rbc",
+        imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF4dUZD5Y31skLPHo3Db0zP7KC5aInr5-1Zg&usqp=CAU",
+    },
+    {
+        name: "deloitte",
+        imgUrl: "https://topron.ca/wp-content/uploads/2018/03/deloitte_logo.png",
+    },
+];
+
 export default function Home() {
     const openVideoModal = (videoUrl) => {};
 
@@ -129,7 +148,7 @@ export default function Home() {
 
             <section>
                 <DarkBgWithShapes
-                    className="text-white py-16"
+                    className="text-white py-section"
                     shapes={[
                         {
                             position: { top: "20%", right: 0 },
@@ -186,6 +205,29 @@ export default function Home() {
                         </div>
                     </div>
                 </DarkBgWithShapes>
+            </section>
+
+            <section className="container py-section text-center">
+                <div>
+                    <span className="mb-3 block uppercase text-[.5rem] font-semibold">
+                        Why choose us
+                    </span>
+                    <h2 className="text-4xl">
+                        From Enrollment to Exploration and Beyond, We're with
+                        You.
+                    </h2>
+                </div>
+
+                <div className="mt-10">
+                    <span className="mb-3 block uppercase text-[.5rem] font-semibold">
+                        Our Alumni Works At
+                    </span>
+                    <div className="flex justify-center gap-10 flex-wrap md:gap-16">
+                        {partners.map(({ imgUrl, name }) => (
+                            <img className="w-28" src={imgUrl} alt={name} />
+                        ))}
+                    </div>
+                </div>
             </section>
         </>
     );

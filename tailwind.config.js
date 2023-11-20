@@ -23,6 +23,9 @@ module.exports = {
                 "primary-dark": "#24292c",
                 "primary-dark-fade": "#272c30",
             },
+            padding: {
+                section: "4rem",
+            },
         },
     },
     plugins: [],
