@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer defaults {
+    p {
+        @apply text-sm;
+    }
+}
