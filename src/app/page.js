@@ -4,6 +4,8 @@ import ButtonPrimary from "./(components)/common/buttons/ButtonPrimary";
 import ButtonSecondary from "./(components)/common/buttons/ButtonSecondary";
 import DarkBgWithShapes from "./(components)/common/layout/DarkBgWithShapes";
 import { FaPlay } from "react-icons/fa";
+import CourseCard from "./(components)/CourseCard";
+import { BsArrowRight } from "react-icons/bs";
 
 const professional_images = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQevTrqw6UFQevNjl7_HXa9-MXCenj-cYjDlg&usqp=CAU",
@@ -66,6 +68,39 @@ const partners = [
     {
         name: "deloitte",
         imgUrl: "https://topron.ca/wp-content/uploads/2018/03/deloitte_logo.png",
+    },
+];
+
+const courses = [
+    {
+        courseId: 1,
+        img: {
+            url: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdlYnNpdGV8ZW58MHx8MHx8fDA%3D",
+        },
+        href: "/",
+        title: "Project mission - 2",
+        price: "9.99",
+        category: "Product management",
+    },
+    {
+        courseId: 2,
+        img: {
+            url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2NpZW5jZXxlbnwwfHwwfHx8MA%3D%3D",
+        },
+        href: "/",
+        title: "Science in 1 go",
+        price: "9.99",
+        category: "science",
+    },
+    {
+        courseId: 3,
+        img: {
+            url: "https://images.unsplash.com/photo-1457364887197-9150188c107b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cm9ja2V0fGVufDB8fDB8fHww",
+        },
+        href: "/",
+        title: "rocket science - 1",
+        price: "9.99",
+        category: "rocket science",
     },
 ];
 
@@ -146,66 +181,61 @@ export default function Home() {
                 </div>
             </section>
 
-            <section>
-                <DarkBgWithShapes
-                    className="text-white py-section"
-                    shapes={[
-                        {
-                            position: { top: "20%", right: 0 },
-                            size: "min(20%, 10rem)",
-                        },
-                        {
-                            position: { bottom: "10%", left: 0 },
-                            size: "min(15%, 7rem)",
-                        },
-                    ]}>
-                    <div className="container">
-                        <div>
-                            <span className="mb-3 block uppercase text-[.5rem] font-semibold">
-                                who we help
-                            </span>
-                            <h2 className="text-4xl">
-                                Unlock the Potential, to reach great hights
-                            </h2>
-                        </div>
-
-                        <div className="mt-10 flex gap-10 flex-col items-center md:flex-row md:items-start">
-                            {cards.cards.map(
-                                ({ videoUrl, text, imgUrl }, idx) => (
-                                    <div
-                                        className={`flex-1 max-w-xs ${
-                                            idx + 1 >
-                                            cards.cardCountOnSmallScreen
-                                                ? "hidden"
-                                                : "block"
-                                        } md:block`}>
-                                        <button
-                                            className="overflow-hidden rounded-xl relative group"
-                                            onClick={() => {
-                                                openVideoModal(videoUrl);
-                                            }}>
-                                            <img
-                                                src={imgUrl}
-                                                alt=""
-                                                className="aspect-[1/1.2] object-cover"
-                                            />
-                                            <div
-                                                className="p-2 bg-white text-black absolute rounded-full bottom-2 right-2 text-[.6rem] group-hover:scale-110 transition-transform group-focus:scale-110 "
-                                                aria-hidden="true">
-                                                <FaPlay />
-                                            </div>
-                                            <span className="sr-only">
-                                                Click the button to play video
-                                            </span>
-                                        </button>
-                                        <p className="text-xs mt-2">{text}</p>
-                                    </div>
-                                )
-                            )}
-                        </div>
+            <DarkBgWithShapes
+                className="text-white"
+                shapes={[
+                    {
+                        position: { top: "20%", right: 0 },
+                        size: "min(20%, 10rem)",
+                    },
+                    {
+                        position: { bottom: "10%", left: 0 },
+                        size: "min(15%, 7rem)",
+                    },
+                ]}>
+                <div className="container">
+                    <div className="text-center">
+                        <span className="mb-3 block uppercase text-[.5rem] font-semibold">
+                            who we help
+                        </span>
+                        <h2 className="text-4xl">
+                            Unlock the Potential, to reach great hights
+                        </h2>
                     </div>
-                </DarkBgWithShapes>
-            </section>
+
+                    <div className="mt-10 flex gap-10 flex-col items-center justify-center md:flex-row">
+                        {cards.cards.map(({ videoUrl, text, imgUrl }, idx) => (
+                            <div
+                                className={`flex-1 max-w-xs ${
+                                    idx + 1 > cards.cardCountOnSmallScreen
+                                        ? "hidden"
+                                        : "block"
+                                } md:block`}>
+                                <button
+                                    className="overflow-hidden rounded-xl relative group"
+                                    onClick={() => {
+                                        openVideoModal(videoUrl);
+                                    }}>
+                                    <img
+                                        src={imgUrl}
+                                        alt=""
+                                        className="aspect-[1/1.2] object-cover"
+                                    />
+                                    <div
+                                        className="p-2 bg-white text-black absolute rounded-full bottom-2 right-2 text-[.6rem] group-hover:scale-110 transition-transform group-focus:scale-110 "
+                                        aria-hidden="true">
+                                        <FaPlay />
+                                    </div>
+                                    <span className="sr-only">
+                                        Click the button to play video
+                                    </span>
+                                </button>
+                                <p className="text-xs mt-2">{text}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </DarkBgWithShapes>
 
             <section className="container py-section text-center">
                 <div>
@@ -218,16 +248,45 @@ export default function Home() {
                     </h2>
                 </div>
 
-                <div className="mt-10">
-                    <span className="mb-3 block uppercase text-[.5rem] font-semibold">
-                        Our Alumni Works At
-                    </span>
-                    <div className="flex justify-center gap-10 flex-wrap md:gap-16">
-                        {partners.map(({ imgUrl, name }) => (
-                            <img className="w-28" src={imgUrl} alt={name} />
-                        ))}
-                    </div>
+                <ButtonPrimary className="mt-10" type="button">
+                    Have a quick meeting
+                </ButtonPrimary>
+            </section>
+
+            <DarkBgWithShapes
+                shapes={[
+                    { position: { top: "5%", right: "10%" } },
+                    { position: { bottom: 0, left: 0 } },
+                ]}>
+                <span className="mb-14 block uppercase text-white text-sm text-center font-semibold">
+                    Our Alumni Works At
+                </span>
+                <div className="flex justify-center gap-10 flex-wrap md:gap-16">
+                    {partners.map(({ imgUrl, name }) => (
+                        <img className="w-28" src={imgUrl} alt={name} />
+                    ))}
                 </div>
+            </DarkBgWithShapes>
+
+            <section className="py-section text-center container">
+                <h2 className="text-2xl  font-medium">
+                    Learn the Technical and Business skills that employers seek
+                </h2>
+
+                <div className="flex flex-wrap gap-10 justify-center mt-8 text-start">
+                    {courses.map((course) => (
+                        <CourseCard key={course.courseId} {...course} />
+                    ))}
+                </div>
+
+                <ButtonPrimary
+                    className="group mt-10 flex w-fit items-center gap-2 mx-auto"
+                    type="link"
+                    href="/courses"
+                    haveHoverEffects={false}>
+                    Browse more courses
+                    <BsArrowRight className="w-0 -translate-x-4 group-hover:w-6 group-hover:translate-x-0 group-focus:w-6 group-focus:translate-x-0 transition-all" />
+                </ButtonPrimary>
             </section>
         </>
     );

@@ -21,14 +21,14 @@ const Shape = ({
 
 const DarkBgWithShapes = ({ children, shapes = [], className }) => {
     return (
-        <div
-            className={`relative overflow-hidden min-h-[100vh] bg-[#000000e6] ${className}`}>
+        <section
+            className={`relative overflow-hidden bg-[#000000e6] py-section ${className}`}>
             {shapes.map((shape) => (
                 <Shape {...shape} />
             ))}
 
             {children}
-        </div>
+        </section>
     );
 };
 
