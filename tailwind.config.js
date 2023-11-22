@@ -22,9 +22,12 @@ module.exports = {
                 primary: "#0b2d39",
                 "primary-dark": "#24292c",
                 "primary-dark-fade": "#272c30",
+
+                "dark-fade": "#1f1f1f",
+                dark: "#000000e6",
             },
             padding: {
-                section: "4rem",
+                section: "5rem",
             },
         },
     },

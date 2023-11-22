@@ -15,18 +15,17 @@ const Shape = ({
                 ...position,
                 width: size,
             }}
-            className="absolute outline-[#c4c4c40f] aspect-square outline bg-[#c4c4c40f] rounded-full w-20"></div>
+            className="absolute -z-10 outline-dark-fade aspect-square outline bg-dark-fade rounded-full w-20"></div>
     );
 };
 
 const DarkBgWithShapes = ({ children, shapes = [], className }) => {
     return (
         <section
-            className={`relative overflow-hidden bg-[#000000e6] py-section ${className}`}>
-            {shapes.map((shape) => (
-                <Shape {...shape} />
+            className={`isolate relative overflow-hidden bg-dark py-section text-white ${className}`}>
+            {shapes.map((shape, idx) => (
+                <Shape {...shape} key={idx} />
             ))}
-
             {children}
         </section>
     );

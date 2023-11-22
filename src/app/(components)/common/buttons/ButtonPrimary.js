@@ -12,7 +12,16 @@ const ButtonPrimary = ({
     return type == "button" ? (
         <button
             onClick={onClick}
-            class={`px-4 py-2 sm:px-6 rounded-full bg-primary ${
+            className={`px-4 py-2 sm:px-6 rounded-full bg-primary ${
+                haveHoverEffects && "hover:text-primary hover:bg-transparent"
+            } border-primary  border-[1.5px]  text-white transition inline-block ${className}`}>
+            {children}
+        </button>
+    ) : type == "submit" ? (
+        <button
+            type="submit"
+            onClick={onClick}
+            className={`px-4 py-2 sm:px-6 rounded-full bg-primary ${
                 haveHoverEffects && "hover:text-primary hover:bg-transparent"
             } border-primary  border-[1.5px]  text-white transition inline-block ${className}`}>
             {children}
@@ -20,7 +29,7 @@ const ButtonPrimary = ({
     ) : (
         <Link
             href={href}
-            class={`px-4 py-2 sm:px-6 rounded-full bg-primary ${
+            className={`px-4 py-2 sm:px-6  rounded-full bg-primary ${
                 haveHoverEffects && "hover:text-primary hover:bg-transparent"
             } border-primary  border-[1.5px]  text-white transition inline-block ${className}`}>
             {children}

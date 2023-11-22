@@ -7,3 +7,10 @@
         @apply text-sm;
     }
 }
+
+progress::-webkit-progress-bar {
+    @apply bg-neutral-200 scale-y-[.8];
+}
+progress::-webkit-progress-value {
+    @apply bg-amber-300 rounded-full;
+}

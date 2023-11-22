@@ -4,6 +4,7 @@ import "./globals.css";
 import MobileMenu from "./(components)/Navbar/components/MobileMenu";
 import NavState from "./(components)/Navbar/context/NavContext";
 import MobileMenuBackdrop from "./(components)/Navbar/components/MobileMenuBackdrop";
+import Footer from "./(components)/Footer";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
                     <MobileMenuBackdrop />
                 </NavState>
                 <main>{children}</main>
+                <Footer />
             </body>
         </html>
     );
