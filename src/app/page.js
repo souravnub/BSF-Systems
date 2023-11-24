@@ -20,6 +20,7 @@ import Card from "./(components)/common/layout/ContactSection/Card";
 import Input from "./(components)/common/form/Input";
 import { Form, Formik } from "formik";
 import Checkbox from "./(components)/common/form/Checkbox";
+import CoursesReel from "./(components)/layout/courses/CoursesReel";
 
 const professional_images = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQevTrqw6UFQevNjl7_HXa9-MXCenj-cYjDlg&usqp=CAU",
@@ -93,7 +94,7 @@ const courses = [
             url: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdlYnNpdGV8ZW58MHx8MHx8fDA%3D",
         },
         href: "/",
-        title: "Project mission - 2",
+        name: "Project mission - 2",
         price: "9.99",
         category: "Product management",
     },
@@ -103,7 +104,7 @@ const courses = [
             url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2NpZW5jZXxlbnwwfHwwfHx8MA%3D%3D",
         },
         href: "/",
-        title: "Science in 1 go",
+        name: "Science in 1 go",
         price: "9.99",
         category: "science",
     },
@@ -113,7 +114,7 @@ const courses = [
             url: "https://images.unsplash.com/photo-1457364887197-9150188c107b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cm9ja2V0fGVufDB8fDB8fHww",
         },
         href: "/",
-        title: "rocket science - 1",
+        name: "rocket science - 1",
         price: "9.99",
         category: "rocket science",
     },
@@ -217,7 +218,7 @@ export default function Home() {
 
     return (
         <>
-            <section className="py-36">
+            <section className="pb-section pt-20">
                 <div className="container text-center">
                     <h1 className="text-4xl  font-medium md:text-5xl md:leading-[4rem]">
                         Empower Your Future and Explore Diverse Courses made by
@@ -388,10 +389,13 @@ export default function Home() {
                 <h2 className="text-2xl  font-medium">
                     Learn the Technical and Business skills that employers seek
                 </h2>
-
                 <div className="flex flex-wrap gap-10 justify-center mt-8 text-start">
                     {courses.map((course) => (
-                        <CourseCard key={course.courseId} {...course} />
+                        <CourseCard
+                            key={course.courseId}
+                            className="max-w-xs"
+                            {...course}
+                        />
                     ))}
                 </div>
 

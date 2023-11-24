@@ -14,3 +14,19 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
     @apply bg-amber-300 rounded-full;
 }
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    @apply relative mt-2;
+}
+
+.swiper-pagination-bullet {
+    transition: width 100ms ease;
+    height: 6px !important;
+    width: 6px !important;
+}
+.swiper-pagination-bullet-active {
+    @apply !w-5 !rounded-full !bg-primary-light;
+}

@@ -15,6 +15,7 @@ const Nav = () => {
 
     useEffect(() => {
         let ani = navBarScrollAnimation(navRef.current);
+        document.body.style.paddingTop = `${navRef.current?.clientHeight}px`;
 
         return () => {
             ani?.revert();
@@ -23,10 +24,10 @@ const Nav = () => {
 
     return (
         <nav
-            className="fixed w-full z-50 text-black backdrop-blur-md py-5"
+            className="fixed top-0 w-full z-50 text-black backdrop-blur-md py-5"
             ref={navRef}>
             <div className="flex  justify-between items-center container">
-                <h3>Logo</h3>
+                <Link href="/">Logo</Link>
 
                 <ul className="gap-12  hidden md:flex lg:gap-20">
                     {navLinks.map(({ name, href }) => (
