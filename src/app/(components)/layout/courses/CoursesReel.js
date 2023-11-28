@@ -19,7 +19,7 @@ const sliderBreakpoints = {
         slidesPerView: 3,
     },
     1000: {
-        slidesPerView: 4,
+        slidesPerView: 5,
     },
 };
 
